@@ -1,0 +1,42 @@
+<script type="text/javascript">
+window.fbAsyncInit = function() {
+    console.log("fbAsyncInit");
+    FB.init({
+      appId      : 115071338568035, // App ID
+      channelURL : '//shelby.tv/channel.html', // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      oauth      : true, // enable OAuth 2.0
+      xfbml      : true  // parse XFBML
+    });
+    FB.getLoginStatus(function(response) {
+      if (response.status!="unknown") svg.selectAll('.profile')[0][0].outerHTML='<img src="http://graph.facebook.com/'+response.authResponse.userID+'/picture?type=square" class="user">';    
+    });
+  };
+</script>
+<style type="text/css">
+.send {
+  padding: 1em 1em;
+  /*border: 2px dashed blue;*/
+  display: inline-block;
+  position: relative;
+}
+.link {
+	background: green;
+	padding: 2em 2em;
+	transition: background 2s, padding 1s;
+}
+.link:hover {
+	background: orange;
+	width: 30px;
+	height: 30px;
+	padding: 1.5em 1.5em;
+}
+</style>
+<div id="fb-root"></div>
+
+<div class="send">
+	<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+	<fb:send href="http://www.youtube.com" ref="TestPage"></fb:send>
+</div>
+<!-- <a href="/form" class="link">Like and send a link! </a> -->

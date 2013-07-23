@@ -1,0 +1,73 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script type="text/javascript">
+window.fbAsyncInit = function() {
+    console.log("fbAsyncInit");
+    FB.init({
+      appId      : 115071338568035, // App ID
+      channelURL : '//shelby.tv/channel.html', // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      oauth      : true, // enable OAuth 2.0
+      xfbml      : true  // parse XFBML
+    });
+  };
+
+//   // Load the SDK asynchronously
+//   (function(d, s, id){
+//      var js, fjs = d.getElementsByTagName(s)[0];
+//      if (d.getElementById(id)) {return;}
+//      js = d.createElement(s); js.id = id;
+//      js.src = "//connect.facebook.net/en_US/all.js";
+//      fjs.parentNode.insertBefore(js, fjs);
+//    }(document, 'script', 'facebook-jssdk'));
+//    FB.ui({
+//   method: 'send',
+//   link: 'http://www.nytimes.com/2011/06/15/arts/people-argue-just-to-win-scholars-assert.html',
+// });
+$(document).ready(function(){
+  $('.image').click(function(){    
+    FB.ui({
+      method: 'send',
+      link: 'http://1.bp.blogspot.com/-qloheq-MP54/TgyC-jU4dTI/AAAAAAAAAgc/ib_Wnik5oAI/s200/smiley%2Bface.jpg'
+    });
+  });
+});
+</script>
+<style type="text/css">
+.likeSend{
+  padding: 1em 1em;
+  border: 1px solid black; 
+  position: relative;
+  background-color: white;
+}
+.greyBorder {
+  padding: 1em 1em;
+  position: relative;
+}
+.container {
+  display: inline-block;
+  background-color: orange;
+}
+.link {
+  background-color: yellow;
+  padding: 2em 2em;
+  display: inline-block;
+}
+.image {
+  display:block;
+}
+</style>
+<h1> I embedded a partial! </h1>
+<div class="container">
+  <div class="greyBorder">
+    <div class= "likeSend">
+      <div id="fb-root"></div>
+      <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+      <fb:like href="http://youtube.com" show_faces="true" width="450" send="true"></fb:like>
+    </div>
+  </div>
+</div>
+<div class="link">
+  <a href="/send" style="color:red;"> Send a link! </a>
+</div>
+<img src="http://1.bp.blogspot.com/-qloheq-MP54/TgyC-jU4dTI/AAAAAAAAAgc/ib_Wnik5oAI/s200/smiley%2Bface.jpg" class="image"/>
