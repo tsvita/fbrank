@@ -1,4 +1,4 @@
-class App < sinatra/base
+class App < Sinatra:: base
 	require 'sinatra'
 
 	get '/' do
